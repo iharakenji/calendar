@@ -165,8 +165,8 @@ class _CalendarHomePageState extends State<CalendarHomePage> {
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: ListTile(
-                      onTap: () => print('${value[index]}'),
-                      title: Text('${value[index]}'),
+                      onTap: () => print(value[index].title),
+                      title: Text(value[index].title),
                     ),
                   );
                 },
@@ -183,14 +183,14 @@ class _CalendarHomePageState extends State<CalendarHomePage> {
     var linkedHashMap = LinkedHashMap<DateTime, List<Event>>();
     linkedHashMap.addAll({
       DateTime.now().subtract(const Duration(days: 2)): [
-        Event('Event 1'),
-        Event('Event 2')
+        Event('Go shopping'),
+        Event('Go to the dentist')
       ],
-      DateTime.now().subtract(const Duration(days: 1)): [Event('Event 3')],
-      DateTime.now(): [Event('Event 4'), Event('Event 6'), Event('Event 6')],
+      DateTime.now().subtract(const Duration(days: 1)): [Event('Pay rent')],
+      DateTime.now(): [Event('Attend a meeting'), Event('Have dinner with family'), Event('Go to the gym')],
       DateTime.now().add(const Duration(days: 3)): [
-        Event('Event 7'),
-        Event('Event 8')
+        Event('Garbage collection'),
+        Event('Go mountain climbing')
       ],
     });
     return linkedHashMap;
